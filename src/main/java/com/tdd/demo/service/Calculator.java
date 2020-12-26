@@ -7,10 +7,18 @@ public class Calculator {
 			return 0;
 		}else if(input.contains(",")) {
 			String[] sar=input.split(",");
-			return Integer.valueOf(sar[0])+Integer.valueOf(sar[1]);
+			int sum=0;
+			for(int i=0;i<sar.length;i++) {
+				sum+=convertStringToInt(sar[i]);
+			}
+			return sum;
 		}
 		else {
 			return Integer.valueOf(input);
 		}
+	}
+	
+	public static int convertStringToInt(String s) {
+		return Integer.valueOf(s);
 	}
 }
