@@ -39,6 +39,6 @@ public class CalculatorTest {
 	@Test
 	public void shouldAcceptCustomDelimiter() {
 		
-		assertEquals(3, "//;\\n1;2");
+		assertEquals(3, Calculator.add("//;\n1;2"));
 	}
 }
