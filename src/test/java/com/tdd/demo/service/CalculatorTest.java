@@ -33,6 +33,6 @@ public class CalculatorTest {
 	@Test
 	public void shouldAcceptNewLineAsDelimiter() {
 		
-		assertEquals(6, "1\n2,3");
+		assertEquals(6, Calculator.add("1,2\n3"));
 	}
 }
