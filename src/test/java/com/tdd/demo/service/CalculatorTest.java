@@ -1,6 +1,7 @@
 package com.tdd.demo.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
@@ -40,5 +41,14 @@ public class CalculatorTest {
 	public void shouldAcceptCustomDelimiter() {
 		
 		assertEquals(3, Calculator.add("//;\n1;2"));
+	}
+	
+	@Test
+	public void shouldThrowExceptionForNegetiveNumbers() {
+		
+		assertThrows(RuntimeException.class, ()-> {
+			Calculator.add("1,-2,3,-4");
+		});
+		
 	}
 }
