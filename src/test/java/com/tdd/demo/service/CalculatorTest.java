@@ -46,9 +46,12 @@ public class CalculatorTest {
 	@Test
 	public void shouldThrowExceptionForNegetiveNumbers() {
 		
-		assertThrows(RuntimeException.class, ()-> {
+		Exception exception=assertThrows(RuntimeException.class, ()-> {
 			Calculator.add("1,-2,3,-4");
 		});
+		String expected="Negetives not allowed";
+		String actual=exception.getMessage();
 		
+		assertEquals(expected, actual);
 	}
 }
