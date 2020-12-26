@@ -29,10 +29,13 @@ public class Calculator {
 		return sar;
 	}
 	
-	public static int sum(String[] sar) {
+	public static int sum(String[] sar) throws RuntimeException{
 	
 		int sum=0;
 		for(int i=0;i<sar.length;i++) {
+			if(convertStringToInt(sar[i])<0) {
+				throw new RuntimeException("Negetives not allowed");
+			}
 			sum+=convertStringToInt(sar[i]);
 		}
 		return sum;
